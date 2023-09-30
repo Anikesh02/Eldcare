@@ -138,7 +138,7 @@ const Home = () => {
            <About />
 
       {/* Services  */}
-      <section>
+      {/* <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">Our Medical Services</h2>
@@ -146,7 +146,7 @@ const Home = () => {
           </div>
           <ServiceList />
         </div>
-      </section>
+      </section> */}
       {/* Services  end*/}
 
       {/* Feature Section  */}
