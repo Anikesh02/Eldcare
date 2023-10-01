@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import appointmentImg from '../../assets/images/appointment.png.png'
+import appointmentImg from '../../assets/images/appointment.jpg'
 import { Link } from 'react-router-dom'
 
 

@@ -80,7 +80,7 @@ const Home = () => {
                 <p className='text__para'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque sint ad? Nemo facere voluptate cumque beatae? Officiis blanditiis ratione ab natus omnis culpa maxime odit quasi nulla.
                 </p>
-                <button className='btn'>Request an Appointment</button>
+                <Link to='/appointment'><button className='btn'>Request an Appointment</button></Link>
   
               </div>
 
