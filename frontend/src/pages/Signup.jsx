@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import signupImg from '../assets/images/signup.gif'
 import avatar from '../assets/images/elder-icon.png'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import { createUser } from '../firebase.js';
 import { useUser } from '../UserContext.jsx';
 
 
 
 const Signup = () => {
+
+  const navigate = useNavigate();
 
   const [selectedFile, setSelectedFile] = useState(null)
   const [previewURL, setPreviewURL] = useState('')
@@ -44,11 +46,12 @@ const Signup = () => {
       const loggedInUser = await createUser(name, email, password, file, gender, role);
       if (loggedInUser) {
         updateUser(loggedInUser);
+        navigate('/home');
       } else {
         console.error("Login failed: Unable to create user");
       }
     } catch (error) {
-      console.error("Error object:", error); // Log the entire error object
+      console.error("Error object:", error);
 
       if (error instanceof Error && error.message) {
         console.error("Login failed:", error.message);

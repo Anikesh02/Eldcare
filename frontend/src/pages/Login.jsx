@@ -1,18 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import { logInUser } from '../firebase.js';
-import { useUser } from '../UserContext.jsx';
+
 
 
 
 function Login() {
 
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email:'',
     password:''
   })
-
-  const { user, updateUser } = useUser();
 
   const handleInputChange = e=> {
     setFormData({...formData, [e.target.name]:e.target.value})
@@ -25,7 +24,9 @@ function Login() {
       const { email, password } = formData;
       console.log(email, password);
       const loggedInUser = await logInUser(email, password);
-      updateUser(loggedInUser);
+      console.log("logged in as:", loggedInUser);
+      navigate('/home')
+
     } catch (error) {
       console.error("Login failed:", error.message);
     }
@@ -46,15 +47,12 @@ function Login() {
         </div>
 
         <div className="mt-7">
-          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Login</button>
+          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3" >Login</button>
         </div>
 
         <p className="mt-5 text-textColor text-center">Don't have an account ? <Link to='/register' className='text-primaryColor font-medium ml-1'>Register</Link></p>
 
       </form>
-      <p>
-        Email is: {user ? user.email : 'Not logged in'}
-      </p>
     </div>
   </section>
   

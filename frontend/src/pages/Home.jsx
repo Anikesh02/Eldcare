@@ -18,7 +18,6 @@ import FaqList from '../components/Faq/FaqList'
 import Testimonial from '../components/Testimonials/Testimonial'
 import { useEffect } from 'react'
 import { useUser } from '../UserContext'
-import { getUser } from '../firebase.js';
 import { auth } from '../firebase.js';
 import { onAuthStateChanged } from 'firebase/auth';
 

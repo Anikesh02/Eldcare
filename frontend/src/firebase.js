@@ -66,29 +66,6 @@ async function logInUser(email, password) {
   }
 }
 
-const getUser = async (userId) => {
 
-  if (userId) {
-    try {
-      const userRef = doc(db, 'users', userId);
-      const docSnap = await getDoc(userRef);
-
-      if (docSnap.exists()) {
-        console.log('Document data:', docSnap.data());
-        return docSnap.data();
-      } else {
-        console.log('No such document!');
-        return null;
-      }
-    } catch (error) {
-      console.error('Error fetching user document:', error);
-      return null;
-    }
-  } else {
-    console.log('No user logged in');
-    return null;
-  }
-};
-
-export { createUser, logInUser, getUser, auth };
+export { createUser, logInUser, auth };
 export default app;
