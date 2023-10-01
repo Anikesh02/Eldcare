@@ -76,7 +76,7 @@ const Home = () => {
             <div>
               <div className='lg:w-[570px]'>
               <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>Hello, {user?.name? user.name : 'User'}.</h1>
-                <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help elders live a healthy, shorter life.</h1>
+                <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help elders live a healthy, longer life.</h1>
                 <p className='text__para'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque sint ad? Nemo facere voluptate cumque beatae? Officiis blanditiis ratione ab natus omnis culpa maxime odit quasi nulla.
                 </p>
