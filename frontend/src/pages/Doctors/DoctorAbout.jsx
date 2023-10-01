@@ -6,9 +6,9 @@ const DoctorAbout = () => {
     <div>
         <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
             About of
-            <span className='text-irisBlueColor font-bold text-[24px] leading-9'>Muhibur Rahman</span>
+            <span className='text-irisBlueColor font-bold text-[24px] leading-9'>Kohinoor Hospital</span>
             </h3>
-            <p className="text__para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem magnam dolorem velit sit voluptatibus, atque laborum cumque facilis voluptatum, architecto fuga distinctio eius natus odio voluptate. Vero sit voluptatem vitae cum, earum voluptates nesciunt non ipsa enim delectus, repudiandae, deleniti eveniet soluta sint exercitationem. Facilis harum doloribus perferendis quidem quas.</p>
+            <p className="text__para">Kohinoor Hospitals Mumbai is the only LEED certified platinum rated hospital in Mumbai, having been awared with 54 credit points. Kohinoor Hospital Mumbai is about 8.3 km from the Chhatrapati Shivaji International Airport..</p>
     </div>
 
     <div className="mt-12">
@@ -17,7 +17,7 @@ const DoctorAbout = () => {
             <li className="flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]">
                 <div>
                     <span className='text-irisBlueColor text-[15px] leading-6 font-semibold'>{formateDate('05-13-2008')} - {formateDate('03-04-2010')}</span>
-                    <p className='text-[15px] leading-6 font-medium text-textColor'>PHD in Surgeon</p>
+                    <p className='text-[15px] leading-6 font-medium text-textColor'>Best for Cancer treatment</p>
                 </div>
                 <p className='text-[14px] leading-5 font-medium text-textColor'>New Apollo Hospital, New York.</p>
             </li>
