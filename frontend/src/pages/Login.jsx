@@ -1,64 +1,42 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import app from '../firebase.js';
+import { logInUser } from '../firebase.js';
+import { useUser } from '../UserContext.jsx';
 
-const auth = getAuth(app);
 
-function logInUser(email, password) {
-  return signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      return userCredential.user;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      throw new Error(errorMessage);
-    });
-}
-
-function createUser(email, password) {
-  return createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      return userCredential.user;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      throw new Error(errorMessage);
-    });
-}
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [user, setUser] = useState({});
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+  const [formData, setFormData] = useState({
+    email:'',
+    password:''
+  })
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  const { user, updateUser } = useUser();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleInputChange = e=> {
+    setFormData({...formData, [e.target.name]:e.target.value})
+  }
 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
+      const { email, password } = formData;
       console.log(email, password);
       const loggedInUser = await logInUser(email, password);
-      setUser(loggedInUser);
+      updateUser(loggedInUser);
     } catch (error) {
       console.error("Login failed:", error.message);
     }
   };
+  
 
 
   return  <section className="px-5 lg:px-0">
     <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10">
       <h3 className='text-headingColor text-[22px] leading-9 font-bold mb-10'>Hello <span className='text-primaryColor'>Welcome</span> Back 🙋</h3>
-      <form className='py-4 md:py-0'>
+      <form className='py-4 md:py-0' onSubmit={handleSubmit}>
         <div className="mb-5">
           <input type="email" placeholder='Enter Your Email' name='email' value={formData.email} onChange={handleInputChange} className='w-full py-3 border-b bprder-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer' required />
         </div>
@@ -74,6 +52,9 @@ function Login() {
         <p className="mt-5 text-textColor text-center">Don't have an account ? <Link to='/register' className='text-primaryColor font-medium ml-1'>Register</Link></p>
 
       </form>
+      <p>
+        Email is: {user ? user.email : 'Not logged in'}
+      </p>
     </div>
   </section>
   

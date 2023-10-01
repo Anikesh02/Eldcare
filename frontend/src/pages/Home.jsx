@@ -16,12 +16,57 @@ import ServiceList from '../components/Services/ServiceList'
 import DoctorList from '../components/Doctors/DoctorList'
 import FaqList from '../components/Faq/FaqList'
 import Testimonial from '../components/Testimonials/Testimonial'
+import { useEffect } from 'react'
+import { useUser } from '../UserContext'
+import { getUser } from '../firebase.js';
+import { auth } from '../firebase.js';
+import { onAuthStateChanged } from 'firebase/auth';
+
+
 
 
 
 
 
 const Home = () => {
+
+  const { user, updateUser } = useUser();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, displayName, photoURL, email } = user;
+        updateUser({ uid, name: displayName, photoURL, email });
+      } else {
+        updateUser(null);
+      }
+    });
+    return () => unsubscribe();
+  }, [updateUser]);
+
+  console.log(user);
+  console.log(user?.name);
+
+
+
+  // const fetchUser = async (uid) => {
+  //   if (uid) {
+  //     const userData = await getUser(uid);
+  //     if (userData) {
+  //       updateUser(userData);
+  //       console.log('logged:', userData);
+  //     }
+  //   } else {
+  //     console.log('No user logged in');
+  //   }
+  // }
+  
+  // useEffect(() => {
+  //   if (user?.uid) {
+  //     fetchUser(user.uid);
+  //   }
+  // }, [user]);
+
   return (
     <>
     
@@ -31,6 +76,7 @@ const Home = () => {
             {/* Hero Content  */}
             <div>
               <div className='lg:w-[570px]'>
+              <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>Hello, {user?.name? user.name : 'User'}.</h1>
                 <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help elders live a healthy, longer life.</h1>
                 <p className='text__para'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque sint ad? Nemo facere voluptate cumque beatae? Officiis blanditiis ratione ab natus omnis culpa maxime odit quasi nulla.
