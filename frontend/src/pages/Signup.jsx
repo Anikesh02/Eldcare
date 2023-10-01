@@ -12,7 +12,7 @@ const Signup = () => {
     name:'',
     email:'',
     password:'',
-    photo:selectedFile,
+    photo:'selectedFile',
     gender:'',
     role:'patient'
   })
@@ -23,7 +23,6 @@ const Signup = () => {
 
   const handleFileInputChange = async event=>{
     const file = event.target.files[0]
-
 
     console.log(file)
   }
@@ -56,7 +55,7 @@ const Signup = () => {
         </div>
 
         <div className="mb-5">
-          <input type="email" placeholder='Enter your Email' name='email' value={formData.email} onChange={handleInputChange}  className='w-full pr-4 py-3 border-b bprder-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer' required />
+          <input type="email" placeholder='Enter your Email' name='email' value={formData.email} onChange={handleInputChange}  className='w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer' required />
         </div>
 
         <div className="mb-5">
@@ -92,7 +91,7 @@ const Signup = () => {
       </div>
 
       <div className="mt-7">
-          <button type='submit'  className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Sign Up</button>
+          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Sign Up</button>
         </div>
 
         <p className="mt-5 text-textColor text-center">Already have an account ? <Link to='/login' className='text-primaryColor font-medium ml-1'>Login</Link></p>
