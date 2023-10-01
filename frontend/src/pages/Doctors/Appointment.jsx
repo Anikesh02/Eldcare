@@ -96,11 +96,11 @@ const Appointment = () => {
       <option value="">Select</option>
       <option value="nair">Nair Hospital, Mumbai Central</option>
       <option value="lilavati">Lilavati Hospital, Bandra West</option>
-      <option value="heart">Heart and Vascular</option>
-      <option value="teeth">Dental</option>
-      <option value="mental">Mental Health</option>
-      <option value="brain">Neurology</option>
-      <option value="burn">Burn Treatment</option>
+      <option value="heart">Hospital 3</option>
+      <option value="teeth">Hospital 4</option>
+      <option value="mental">Hospital 5</option>
+      <option value="brain">Hospital 6</option>
+      
     </select>
     </label>
     
