@@ -115,13 +115,14 @@ const Appointment = () => {
       <option value="friday">Friday: 1:30 PM to 6:30 PM</option>
     </select>
     </label>
-  </div>
+  
 
-
+      
       <div className="mt-7">
-          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Proceed</button>
+       <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"><Link to='/payment'>Proceed</Link></button>
         </div>
-
+        
+        </div>
         </form>
 
         </div>

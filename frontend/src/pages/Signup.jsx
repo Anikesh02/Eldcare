@@ -8,6 +8,7 @@ import { useUser } from '../UserContext.jsx';
 
 
 const Signup = () => {
+  
 
   const navigate = useNavigate();
 
@@ -38,6 +39,7 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    
     try {
       const { name, email, password, gender, role } = formData;
       const file = selectedFile;
@@ -58,7 +60,7 @@ const Signup = () => {
       } else {
         console.error("Login failed: An unknown error occurred");
       }
-    }
+    } 
   };
 
 
@@ -121,7 +123,10 @@ const Signup = () => {
             </div>
 
             <div className="mt-7">
-              <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Sign Up</button>
+              <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 hover:bg-[#5b5be7]">Sign Up</button>
+
+              
+
             </div>
 
             <p className="mt-5 text-textColor text-center">Already have an account ? <Link to='/login' className='text-primaryColor font-medium ml-1'>Login</Link></p>
