@@ -4,12 +4,13 @@ import Services from '../pages/Services'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Contact from '../pages/Contact'
-import Doctors from '../pages/Doctors/Doctors'
-import DoctorDetails from '../pages/Doctors/DoctorDetails'
+import Doctors from '../pages/Hospitals/Hospitals'
+import DoctorDetails from '../pages/Hospitals/HospitalDetails'
 // import SidePanel from '../pages/Doctors/SidePanel'
-import Appointment from '../pages/Doctors/Appointment'
+import Appointment from '../pages/Hospitals/Appointment'
 import {Routes, Route} from 'react-router-dom'
-import Payment from '../pages/Doctors/Payment'
+import Payment from '../pages/Hospitals/Payment'
+import PricingCard from '../components/PricingCard'
 
 
 const Routers = () => {
@@ -22,6 +23,7 @@ const Routers = () => {
     <Route path='/register' element={<Signup/>}></Route>
     <Route path='/contact' element={<Contact/>}></Route>
     <Route path='/services' element={<Services/>}></Route>
+    <Route path='/pricing' element={<PricingCard/>}></Route>
     <Route path='/appointment' element={<Appointment/>}></Route>
     <Route path='/payment' element={<Payment/>}></Route>
 

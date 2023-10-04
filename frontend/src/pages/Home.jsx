@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 import About from '../components/About/About'
 import ServiceList from '../components/Services/ServiceList'
-import DoctorList from '../components/Doctors/DoctorList'
+import DoctorList from '../components/Hospitals/HospitalList'
 import FaqList from '../components/Faq/FaqList'
 import Testimonial from '../components/Testimonials/Testimonial'
 import { useEffect } from 'react'
@@ -54,8 +54,7 @@ const Home = () => {
                 <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>Hello, {user?.name ? user.name : 'User'}.</h1>
                 <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[40px] md:leading-[70px]'>We help our elders live a healthy, longer life.</h1>
                 <p className='text__para'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque sint ad? Nemo facere voluptate cumque beatae? Officiis blanditiis ratione ab natus omnis culpa maxime odit quasi nulla.
-                </p>
+                EldCare was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.</p>
                 <Link to='/appointment'><button className='btn'>Request an Appointment</button></Link>
 
               </div>
@@ -88,12 +87,12 @@ const Home = () => {
               <div>
                 <img className='w-full' src={heroImg01} alt="" />
               </div>
-              <div className='mt-[30px]'>
+              {/* <div className='mt-[30px]'>
                 <img src={heroImg02} alt="" className='w-full mb-[30px]' />
                 <img src={heroImg03} alt="" className='w-full' />
 
 
-              </div>
+              </div> */}
             </div>
 
           </div>
@@ -128,7 +127,7 @@ const Home = () => {
                 <img src={icon02} alt="" />
               </div>
               <div className="mt-[30px]">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a location</h2>
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Hospital</h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
 
                 <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>

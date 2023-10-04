@@ -21,6 +21,10 @@ const navLinks = [
     path: "/contact",
     display: "Contact",
   },
+  {
+    path: "/pricing",
+    display: "Buy Premium",
+  },
 ];
 
 

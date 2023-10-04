@@ -37,7 +37,7 @@ export const doctors = [
     totalRating: 272,
     photo: hospitalImg05,
     totalPatients: 1500,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "Sakinaka Road, Andheri East, Mumbai.",
   },
   {
     id: "04",
@@ -47,7 +47,7 @@ export const doctors = [
     totalRating: 272,
     photo: hospitalImg04,
     totalPatients: 1500,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "New Marine Lines, Marine Lines, Mumbai.",
   },
   {
     id: "05",
@@ -61,13 +61,13 @@ export const doctors = [
   },
   {
     id: "06",
-    name: "Dr. Farid Uddin",
+    name: "Lotus Hospital",
     specialization: "Neurology",
     avgRating: 4.8,
     totalRating: 272,
     photo: hospitalImg06,
     totalPatients: 1500,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "Boivali Railway Station, Borivali East, Mumbai.",
   },
 
   
