@@ -178,7 +178,7 @@ const Home = () => {
                   3. Book Appointment for treatment using online scheduling tool.
                 </li>
               </ul>
-              <Link to='/'><button className="btn">Learn More</button></Link>
+              <Link to='/services'><button className="btn">Learn More</button></Link>
             </div>
             {/* Feature img  */}
             <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0 items-center">

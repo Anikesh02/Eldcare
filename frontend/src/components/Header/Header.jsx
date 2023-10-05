@@ -19,7 +19,7 @@ const navLinks = [
   },
   {
     path: "/contact",
-    display: "Contact",
+    display: "Contact Us",
   },
   {
     path: "/pricing",
