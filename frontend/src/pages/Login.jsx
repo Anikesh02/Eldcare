@@ -1,11 +1,26 @@
 import React, { useState } from 'react'
 import { Link , useNavigate} from 'react-router-dom'
 import { logInUser } from '../firebase.js';
+import Loader from '../components/Loader/Loader.jsx';
 
 
 
 
 function Login() {
+
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleButtonClick = () => {
+    // Simulate an asynchronous operation (e.g., API request) here
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000); // Simulated 2-second delay
+
+    // You can replace the setTimeout with your actual API call
+  };
 
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -47,7 +62,7 @@ function Login() {
         </div>
 
         <div className="mt-7">
-          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3" >Login</button>
+          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3" ><Loader onClick={handleButtonClick}isLoading={isLoading} buttonText="Log in"/></button>
         </div>
 
         <p className="mt-5 text-textColor text-center">Don't have an account ? <Link to='/register' className='text-primaryColor font-medium ml-1'>Register</Link></p>

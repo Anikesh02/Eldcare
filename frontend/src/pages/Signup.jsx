@@ -4,10 +4,24 @@ import avatar from '../assets/images/elder-icon.png'
 import { Link , useNavigate} from 'react-router-dom'
 import { createUser } from '../firebase.js';
 import { useUser } from '../UserContext.jsx';
+import Loader from '../components/Loader/Loader';
 
 
 
 const Signup = () => {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleButtonClick = () => {
+    // Simulate an asynchronous operation (e.g., API request) here
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000); // Simulated 2-second delay
+
+    // You can replace the setTimeout with your actual API call
+  };
   
 
   const navigate = useNavigate();
@@ -123,7 +137,7 @@ const Signup = () => {
             </div>
 
             <div className="mt-7">
-              <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 hover:bg-[#5b5be7]">Sign Up</button>
+              <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 hover:bg-[#5b5be7]"><Loader onClick={handleButtonClick}isLoading={isLoading} buttonText="Sign up"/></button>
 
               
 
