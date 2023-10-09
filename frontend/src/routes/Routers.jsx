@@ -6,11 +6,11 @@ import Signup from '../pages/Signup'
 import Contact from '../pages/Contact'
 import Doctors from '../pages/Hospitals/Hospitals'
 import DoctorDetails from '../pages/Hospitals/HospitalDetails'
-// import SidePanel from '../pages/Doctors/SidePanel'
 import Appointment from '../pages/Hospitals/Appointment'
 import {Routes, Route} from 'react-router-dom'
-import Payment from '../pages/Hospitals/Payment'
-import PricingCard from '../components/PricingCard'
+
+import PricingCard from '../components/Subscription/PricingCard'
+import Payment from '../components/Payment/Payment'
 
 
 const Routers = () => {
@@ -28,6 +28,7 @@ const Routers = () => {
     <Route path='/payment' element={<Payment/>}></Route>
 
     
+
   </Routes>
   
 }

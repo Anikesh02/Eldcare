@@ -6,7 +6,7 @@ const Services = () => {
   return <section>
     <div className="container">
     <div className="xl:w-[470px] mx-auto leading-9">
-            <h2 className="heading text-center ">Our Services</h2>
+            <h2 className="heading text-center mb-9">Our Services</h2>
           </div>
          
     <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px]'>
