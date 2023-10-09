@@ -20,6 +20,8 @@ import { useEffect } from 'react'
 import { useUser } from '../UserContext'
 import { auth } from '../firebase.js';
 import { onAuthStateChanged } from 'firebase/auth';
+import { getParameters } from '../firebase.js';
+
 
 
 const Home = () => {
@@ -30,7 +32,10 @@ const Home = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, displayName, photoURL, email } = user;
-        updateUser({ uid, name: displayName, photoURL, email });
+
+        getParameters(user.uid).then((data) => {
+          updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role });
+        });
       } else {
         updateUser(null);
       }
