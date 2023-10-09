@@ -29,7 +29,7 @@ const Doctors = () => {
       <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">What our patient say</h2>
-            <p className="text__para text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates aspernatur ex, amet.</p>
+            <p className="text__para text-center">Eldcare saves our Efforts and time by providing the best efficient facilitie.</p>
         </div>
 
         <Testimonial />

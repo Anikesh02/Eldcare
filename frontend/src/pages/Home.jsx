@@ -114,7 +114,7 @@ const Home = () => {
               </div>
               <div className="mt-[30px]">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Service</h2>
-                <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
+                <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center"> Our Health Service offers unmatched, expert health care in topmost qualified and organized manner</p>
 
                 <Link to='/services' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
                   <BsArrowRight className='group-hover:text-white w-6 h-5' />
@@ -128,7 +128,7 @@ const Home = () => {
               </div>
               <div className="mt-[30px]">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Hospital</h2>
-                <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
+                <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center"> An organized medical service offering diagnostic, therapeutic, or preventive outpatient services.</p>
 
                 <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
                   <BsArrowRight className='group-hover:text-white w-6 h-5' />
@@ -142,7 +142,7 @@ const Home = () => {
               </div>
               <div className="mt-[30px]">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Book Appointment</h2>
-                <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">World-class care for elders. Our Health Service offers unmatched, expert health care.</p>
+                <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">Easily Book appoitnments in nearest possible clinics/hospitals. </p>
 
                 <Link to='/appointment' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
                   <BsArrowRight className='group-hover:text-white w-6 h-5' />
@@ -220,7 +220,7 @@ const Home = () => {
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">Our Top Hospitals For Best Services</h2>
-            <p className="text__para text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates aspernatur ex, amet.</p>
+            <p className="text__para text-center">All the hospitals are known for their service and also are well recognized.</p>
           </div>
 
           <DoctorList />
@@ -249,7 +249,7 @@ const Home = () => {
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">What our visitor's say</h2>
-            <p className="text__para text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates aspernatur ex, amet.</p>
+            <p className="text__para text-center">Eldcare saves our Efforts and time by providing the best efficient facilities.</p>
           </div>
 
           <Testimonial />
