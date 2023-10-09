@@ -44,12 +44,10 @@ async function createUser(name, email, password, photo, gender, role) {
     };
 
     await setDoc(doc(db, 'users', userCredential.user.uid), customUserData);
-
     return userCredential.user;
 
   } catch (error) {
     console.error("Error object:", error);
-
     const errorMessage = error?.message || "An unknown error occurred";
     throw new Error(errorMessage);
   }
