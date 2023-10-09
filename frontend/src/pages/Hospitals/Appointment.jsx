@@ -66,8 +66,8 @@ const Appointment = () => {
       console.log('Appointment data saved successfully!');
 
       //show success message and redirect to home page
-      alert('Appointment booked successfully!');
-      window.location.href = '/home';
+      alert('Appointment Saved Successfully!  Proceed for payment ?');
+      window.location.href = '/payment';
 
     } catch (error) {
       console.log(error);
@@ -139,10 +139,10 @@ const Appointment = () => {
                     <option value="">Select</option>
                     <option value="nair">Nair Hospital, Mumbai Central</option>
                     <option value="lilavati">Lilavati Hospital, Bandra West</option>
-                    <option value="heart">Kohinoor Hospital, Marine Lines</option>
-                    <option value="teeth">Global Hospital, Parel East</option>
-                    <option value="mental">Lotus Hospital, Borivali West</option>
-                    <option value="brain">Yashoda Hospital, Marine Lines</option>
+                    <option value="kohinoor">Kohinoor Hospital, Marine Lines</option>
+                    <option value="global">Global Hospital, Parel East</option>
+                    <option value="lotus">Lotus Hospital, Borivali West</option>
+                    <option value="yashoda">Yashoda Hospital, Marine Lines</option>
 
                   </select>
                 </label>
