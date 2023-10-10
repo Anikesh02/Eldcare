@@ -56,6 +56,8 @@ const Home = () => {
                 <p className='text__para'>
                 EldCare was founded on a better model of care one designed around patients needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.</p>
                 <Link to='/appointment'><button className='btn'>Request an Appointment</button></Link>
+                <Link to='/care'><button className='btn ml-5'>Apply for Care Taker</button></Link>
+
 
               </div>
 

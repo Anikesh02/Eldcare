@@ -11,6 +11,7 @@ import {Routes, Route} from 'react-router-dom'
 
 import PricingCard from '../components/Subscription/PricingCard'
 import Payment from '../components/Payment/Payment'
+import CareTaker from '../components/Caretaker/CareTaker'
 
 
 const Routers = () => {
@@ -26,6 +27,8 @@ const Routers = () => {
     <Route path='/pricing' element={<PricingCard/>}></Route>
     <Route path='/appointment' element={<Appointment/>}></Route>
     <Route path='/payment' element={<Payment/>}></Route>
+    <Route path='/care' element={<CareTaker/>}></Route>
+
 
     
 
