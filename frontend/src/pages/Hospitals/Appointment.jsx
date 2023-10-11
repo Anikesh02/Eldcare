@@ -67,7 +67,7 @@ const Appointment = () => {
 
       //show success message and redirect to home page
       alert('Appointment Saved Successfully!  Proceed for payment ?');
-      window.location.href = '/payment';
+      window.location.href = 'https://buy.stripe.com/9AQ8ycdhNefx8ne9AB';
 
     } catch (error) {
       console.log(error);
