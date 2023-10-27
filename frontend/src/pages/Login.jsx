@@ -11,16 +11,13 @@ function Login() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleButtonClick = () => {
-    // Simulate an asynchronous operation (e.g., API request) here
-    setIsLoading(true);
+  // const handleButtonClick = () => {
+  //   setIsLoading(true);
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000); // Simulated 2-second delay
-
-    // You can replace the setTimeout with your actual API call
-  };
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 5000);
+  // };
 
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -35,17 +32,37 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
+
     try {
       const { email, password } = formData;
       console.log(email, password);
       const loggedInUser = await logInUser(email, password);
       console.log("logged in as:", loggedInUser);
-      navigate('/home')
 
     } catch (error) {
       console.error("Login failed:", error.message);
     }
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 10000);
+
+    navigate('/home')
+
+    
   };
+
+  function LoginText() {
+    if (isLoading) {
+      return <Loader />;
+    } else {
+      return "Log in";
+      // return <Loader />;
+
+    }
+  }
   
 
 
@@ -62,7 +79,10 @@ function Login() {
         </div>
 
         <div className="mt-7">
-          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3" ><Loader onClick={handleButtonClick}isLoading={isLoading} buttonText="Log in"/></button>
+          <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 flex items-center justify-center">
+            {LoginText()}
+            {/* <Loader onClick={handleButtonClick}isLoading={isLoading} buttonText="Log in"/> */}
+            </button>
         </div>
 
         <p className="mt-5 text-textColor text-center">Don't have an account ? <Link to='/register' className='text-primaryColor font-medium ml-1'>Register</Link></p>

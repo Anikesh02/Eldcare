@@ -79,11 +79,24 @@ async function getParameters(uid) {
 async function logOutUser() {
   try {
     await auth.signOut();
+    localStorage.removeItem('user');
   } catch (error) {
     console.error("Logout failed:", error);
   }
 }
 
+async function isLoggedIn() {
+  return new Promise((resolve, reject) => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        resolve(user);
+      } else {
+        reject("No user is logged in");
+      }
+    });
+  });
+}
 
-export { createUser, logInUser, auth, getParameters, db, logOutUser};
+
+export { createUser, logInUser, auth, getParameters, db, logOutUser, isLoggedIn};
 export default app;

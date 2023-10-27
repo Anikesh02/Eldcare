@@ -1,23 +1,13 @@
 import React from "react";
-import { FaSpinner } from "react-icons/fa";
+// import { FaSpinner } from "react-icons/fa";
+import "./styles.css";
 
-const Loader = ({ onClick, isLoading, buttonText }) => {
+const Loader = () => {
   return (
-    <button
-      onClick={onClick}
-      className={` text-white font-bold py-2 px-4 rounded ${
-        isLoading ? "opacity-50 cursor-not-allowed" : ""
-      }`}
-      disabled={isLoading}
-    >
-      {isLoading ? (
-        <span className="flex items-center text-center">
-          <FaSpinner className="animate-spin mr-2 " /> Loading...
-        </span>
-      ) : (
-        buttonText
-      )}
-    </button>
+    <div className="spinner-container">
+      <div className="loading-spinner">
+      </div>
+    </div>
   );
 };
 
