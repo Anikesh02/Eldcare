@@ -66,8 +66,6 @@ const Header = () => {
     }
     else {
       return (
-
-          
           <figure className="w-[50px] h-[50px] rounded-full cursor-pointer" onClick={ logOutUser }>
             <img src={user?.photoURL} className="w-full rounded-full" alt="" />
           </figure>

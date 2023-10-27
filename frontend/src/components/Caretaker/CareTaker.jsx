@@ -35,38 +35,35 @@ const CareTaker = () => {
       const { name, email, phone, age, gender, resume, aadhaar } = formData;
       console.log(formData);
 
-      const appointmentRef = doc(db, 'appointments');
+      const applicationsRef = doc(db, 'caretakerApplications', email);
 
-      await setDoc(appointmentRef, {
-        name: name,
-        email: email,
-        phone: phone,
-        age: age,
+      await setDoc(applicationsRef, {
+          name: name,
+          email: email,
+          phone: phone,
+          age: age,
 
-        gender: gender,
-        resume: resume,
-        aadhaar: aadhaar,
+          gender: gender,
+          resume: resume,
+          aadhaar: aadhaar,
+        });
 
-        // user: user.uid
-      });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          age: '',
+          resume: resume,
+          aadhaar: aadhaar,
+          gender: '',
 
-      // Clear the form after submission
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        age: '',
-        resume: resume,
-        aadhaar: aadhaar,
-        gender: '',
+        });
 
-      });
+        console.log('Application data saved successfully!');
 
-      console.log('Application data saved successfully!');
-
-      //show success message and redirect to home page
-      alert('Application Saved Successfully! ');
-      window.location.href = '/review';
+        alert('Application Saved Successfully! ');
+        window.location.href = '/review';
+      
 
     } catch (error) {
       console.log(error);
@@ -167,7 +164,9 @@ const CareTaker = () => {
                 </div>
 
                 <div className="mt-7">
-                  <Link to='/review'><button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Submit</button></Link>
+                  <div>
+                    <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Submit</button>
+                  </div>
                 </div>
 
               </div>

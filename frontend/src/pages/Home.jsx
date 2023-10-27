@@ -35,6 +35,8 @@ const Home = () => {
 
         getParameters(user.uid).then((data) => {
           updateUser({ uid, name: displayName, photoURL, email, age: data.age, gender: data.gender, role: data.role });
+          localStorage.setItem('user', JSON.stringify(user));
+          console.log(localStorage.getItem('user'));
         });
       } else {
         updateUser(null);
