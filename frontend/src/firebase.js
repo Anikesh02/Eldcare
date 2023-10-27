@@ -76,6 +76,14 @@ async function getParameters(uid) {
     }
 }
 
+async function logOutUser() {
+  try {
+    await auth.signOut();
+  } catch (error) {
+    console.error("Logout failed:", error);
+  }
+}
 
-export { createUser, logInUser, auth, getParameters, db};
+
+export { createUser, logInUser, auth, getParameters, db, logOutUser};
 export default app;

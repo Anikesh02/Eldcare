@@ -4,6 +4,7 @@ import userImg from '../../assets/images/avatar-icon.png'
 import { NavLink, Link } from 'react-router-dom'
 import { BiMenu } from 'react-icons/bi';
 import { useUser } from '../../UserContext.jsx';
+import { logOutUser } from '../../firebase';
 
 const navLinks = [
   {
@@ -65,8 +66,9 @@ const Header = () => {
     }
     else {
       return (
-  
-          <figure className="w-[50px] h-[50px] rounded-full cursor-pointer">
+
+          
+          <figure className="w-[50px] h-[50px] rounded-full cursor-pointer" onClick={ logOutUser }>
             <img src={user?.photoURL} className="w-full rounded-full" alt="" />
           </figure>
       )
