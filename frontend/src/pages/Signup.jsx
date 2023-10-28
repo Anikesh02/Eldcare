@@ -12,16 +12,17 @@ const Signup = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleButtonClick = () => {
-    // Simulate an asynchronous operation (e.g., API request) here
-    setIsLoading(true);
+  // const handleButtonClick = () => {
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000); // Simulated 2-second delay
 
-    // You can replace the setTimeout with your actual API call
-  };
+  //   setIsLoading(false);
+
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 5000); // Simulated 2-second delay
+
+  //   // You can replace the setTimeout with your actual API call
+  // };
   
 
   const navigate = useNavigate();
@@ -51,8 +52,20 @@ const Signup = () => {
     console.log(file)
   }
 
+  function SignUpText() {
+    if (isLoading) {
+      return <Loader />;
+    } else {
+      return "Sign Up";
+      // return <Loader />;
+
+    }
+  }
+
   const submitHandler = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
     
     try {
       const { name, email, password, gender, role } = formData;
@@ -60,6 +73,7 @@ const Signup = () => {
 
       console.log(email, password);
       const loggedInUser = await createUser(name, email, password, file, gender, role);
+
       if (loggedInUser) {
         updateUser(loggedInUser);
         navigate('/home');
@@ -137,10 +151,7 @@ const Signup = () => {
             </div>
 
             <div className="mt-7">
-              <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 hover:bg-[#5b5be7]"><Loader onClick={handleButtonClick}isLoading={isLoading} buttonText="Sign up"/></button>
-
-              
-
+              <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 hover:bg-[#5b5be7] flex items-center justify-center"><SignUpText /></button>
             </div>
 
             <p className="mt-5 text-textColor text-center">Already have an account ? <Link to='/login' className='text-primaryColor font-medium ml-1'>Login</Link></p>
