@@ -9,7 +9,8 @@ import Alert from '../../components/Cards/alert';
 
 const Appointment = () => {
 
-  const {user} = useUser();
+  const user = JSON.parse(localStorage.getItem('user'));
+
 
   const [formData, setFormData] = useState({
     name: '',
@@ -48,26 +49,29 @@ const Appointment = () => {
         gender: gender,
         role: role,
         user: user.uid
+      }).then(() => {
+        console.log('Appointment data saved successfully!');
+
+        //show success message and redirect to home page
+        alert('Appointment Saved Successfully!  Proceed for payment ?');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          age: '',
+          time: '',
+          hospital: '',
+          service: '',
+          gender: '',
+          role: 'patient',
+        });
+        window.location.href = 'https://buy.stripe.com/9AQ8ycdhNefx8ne9AB';
       });
 
       // Clear the form after submission
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        age: '',
-        time: '',
-        hospital: '',
-        service: '',
-        gender: '',
-        role: 'patient',
-      });
 
-      console.log('Appointment data saved successfully!');
 
-      //show success message and redirect to home page
-      alert('Appointment Saved Successfully!  Proceed for payment ?');
-      window.location.href = 'https://buy.stripe.com/9AQ8ycdhNefx8ne9AB';
+
 
     } catch (error) {
       console.log(error);
