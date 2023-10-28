@@ -81,7 +81,10 @@ const Signup = () => {
         console.error("Login failed: Unable to create user");
       }
     } catch (error) {
-      console.error("Error object:", error);
+      console.error("Error object 1:", error.message);
+      alert("Error object:" + error.message);
+      setIsLoading(false);
+
 
       if (error instanceof Error && error.message) {
         console.error("Login failed:", error.message);

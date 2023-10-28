@@ -30,10 +30,6 @@ const Routers = () => {
     <Route path='/payment' element={<Payment/>}></Route>
     <Route path='/care' element={<CareTaker/>}></Route>
     <Route path='/review' element={<UnderReview/>}></Route>
-    
-
-
-    
 
   </Routes>
   

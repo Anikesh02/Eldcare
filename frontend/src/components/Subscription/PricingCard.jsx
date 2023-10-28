@@ -43,7 +43,7 @@ const PricingCard = () => {
                 <p>In-app messaging and communication tools for coordinating care among family members</p>
                 <p>Priority in Appointment Queue</p>
                 <p>Add unlimited contacts.</p>
-                <button className="button"><Link to="https://buy.stripe.com/9AQ8ycdhNefx8ne9AB" >Purchase Now</Link></button>
+                <button className="button"><Link to="https://buy.stripe.com/dR6g0E3Hd4EXgTKaEI" >Purchase Now</Link></button>
             </div>
         </div>
     </div>
