@@ -3,7 +3,6 @@ import { useState } from 'react'
 import DoctorCard from '../../components/Hospitals/HospitalCard'
 import { doctors } from '../../assets/data/hospitals'
 import Testimonial from '../../components/Testimonials/Testimonial'
-import { doc } from 'firebase/firestore'
 
 const Doctors = () => {
 

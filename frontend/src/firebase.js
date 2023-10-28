@@ -22,11 +22,16 @@ async function createUser(name, email, password, photo, gender, role) {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    const storageRef = ref(storage, `profile_photos/${userCredential.user.uid}`);
+    var storageRef = ref(storage, `profile_photos/${userCredential.user.uid}`);
     console.log(photo);
 
-    const snapshot = await uploadBytes(storageRef, photo);
-    console.log('Uploaded the file!', snapshot);
+    if (photo != null) {
+      const snapshot = await uploadBytes(storageRef, photo);
+      console.log('Uploaded the file!', snapshot);
+    }
+    else {
+      storageRef = ref(storage, `profile_photos/genericProfile.jpeg`);
+    }
 
     const photoURL = await getDownloadURL(storageRef);
     console.log(photoURL);
