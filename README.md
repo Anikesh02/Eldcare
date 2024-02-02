@@ -8,3 +8,6 @@ commands:
 4. cd frontend
 5. npm i
 6. npm run dev
+
+
+If you're gonna clone make sure to drop a star⭐️😉
