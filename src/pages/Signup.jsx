@@ -128,7 +128,7 @@ const Signup = () => {
             <div className="mb-5 flex items-center justify-between">
               <label className='text-headingColor font-bold text-[16px] leading-7'> Are you a:
                 <select name="role" value={formData.role} onChange={handleInputChange} className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none' required>
-                  <option value="patient">Elder</option>
+                  <option value="patient">Doctor</option>
                   <option value="doctor">Relative</option>
                 </select>
               </label>
