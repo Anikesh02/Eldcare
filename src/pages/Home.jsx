@@ -1,4 +1,4 @@
-import React from 'react'
+
 import heroImg01 from '../assets/images/hero-img01.png'
 import icon01 from '../assets/images/icon01.png'
 import icon02 from '../assets/images/icon02.png'
@@ -47,8 +47,11 @@ const Home = () => {
     <>
 
       <section className='hero__section pt-[60px] 2xl:h-[800px]'>
+     
         <div className="container">
+        
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
+          
             {/* Hero Content  */}
             <div>
               <div className='lg:w-[570px]'>
@@ -77,7 +80,7 @@ const Home = () => {
                 <div>
                   <h2 className='text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>100%</h2>
                   <span className='w-[100px] h-2 bg-irisBlueColor rounded-full block mt-[-14px]'></span>
-                  <p className='text__para'>Elder's Satisfaction</p>
+                  <p className='text__para'>Elder Satisfaction</p>
                 </div>
               </div>
 
@@ -223,7 +226,7 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">What our visitor's say</h2>
+            <h2 className="heading text-center">What our visitors say</h2>
             <p className="text__para text-center">Eldcare saves our Efforts and time by providing the best efficient facilities.</p>
           </div>
 

@@ -1,7 +1,5 @@
 import './App.css';
 import Layout from './layout/Layout';
-import Home from './pages/Home';
-import { SpeedInsights } from "@vercel/speed-insights/react"
 import React from 'react';
 
 function App() {
@@ -17,6 +15,7 @@ function App() {
     
     
       <Layout/>
+      
     
   ) 
  
