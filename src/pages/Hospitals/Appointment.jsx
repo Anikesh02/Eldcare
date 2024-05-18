@@ -65,7 +65,7 @@ const Appointment = () => {
           gender: '',
           role: 'patient',
         });
-        window.location.href = 'https://buy.stripe.com/9AQ8ycdhNefx8ne9AB';
+        window.location.href = 'https://buy.stripe.com/test_6oE29d91y3X4e0o144';
       });
 
       // Clear the form after submission
