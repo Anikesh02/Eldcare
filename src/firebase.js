@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { getFirestore, setDoc, doc, getDoc } from 'firebase/firestore';
 import { getStorage, getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
@@ -17,6 +17,50 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
+
+const provider = new GoogleAuthProvider();
+export const signInWithGoogle = async () => {
+  try {
+    const userCredential = await signInWithPopup(auth, provider);
+    const user = userCredential.user;
+    console.log(user);
+    return user;
+  } catch (error) {
+    console.error("Error signing in with Google:", error);
+    return null;
+  }
+}
+export const signUpWithGoogle = async (gender, role) => {
+  try {
+    const userCredential = await signInWithPopup(auth, provider);
+    const user = userCredential.user;
+
+    // Set default profile photo if photoURL is null
+    let photoURL = user.photoURL;
+    if (!photoURL) {
+      const storageRef = ref(storage, `profile_photos/genericProfile.jpeg`);
+      photoURL = await getDownloadURL(storageRef); // Get generic profile photo URL
+    }
+
+    // Prepare custom user data
+    const customUserData = {
+      name: user.displayName,
+      gender: gender,  
+      role: role ,  
+      email: user.email,
+      profile: photoURL  
+    };
+
+    // Save the custom data to Firestore
+    await setDoc(doc(db, 'users', user.uid), customUserData);
+
+    console.log("User saved to Firestore:", customUserData);
+    return user;
+  } catch (error) {
+    console.error("Error signing in with Google:", error);
+    return null;
+  }
+}
 
 async function createUser(name, email, password, photo, gender, role) {
   try {
