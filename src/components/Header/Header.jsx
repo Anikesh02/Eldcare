@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "../../assets/images/logo.png";
 import userImg from "../../assets/images/avatar-icon.png";
 import { NavLink, Link } from "react-router-dom";
@@ -32,8 +32,10 @@ const navLinks = [
 const Header = () => {
   const { user } = useUser();
 
-  const headerRef = useRef(null);
-  const menuRef = useRef(null);
+  const [isDarkModeToggle, setIsDarkModeToggle] = useState(false)
+
+  const headerRef = useRef(null)
+  const menuRef = useRef(null)
 
   const handleStickyHeader = () => {
     window.addEventListener("scroll", () => {
@@ -80,14 +82,36 @@ const Header = () => {
     }
   }
 
-  return (
-    <header className="header flex items-center" ref={headerRef}>
-      <div className="container">
-        <div className="flex items-center justify-between">
-          {/* Logo  */}
-          <div>
-            <img src={logo} alt="" />
-          </div>
+  function toggleDarkMode(){
+    return (
+      <div onClick={() => setIsDarkModeToggle(!isDarkModeToggle)} className={`flex w-16 h-8 bg-gray-300 rounded-[50px] cursor-pointer`}>
+        <span className={`w-8 h-8 rounded-[50px] bg-primaryColor dark:bg-primaryColorDark border-solid border-4 border-gray-300 transition-all duration-500 ${isDarkModeToggle ? "ml-8" : ""}`}></span>
+      </div>
+    )
+  } 
+
+
+  useEffect(()=> {
+      const userPrefersMode = window.matchMedia('(prefers-color-scheme:dark)')
+      setIsDarkModeToggle(userPrefersMode.matches)
+      console.log(isDarkModeToggle)
+  },[])
+
+  useEffect(()=> {
+    if(isDarkModeToggle === true){
+      document.documentElement.classList.add("dark")
+    }else{
+      document.documentElement.classList.remove("dark")
+    }
+  },[isDarkModeToggle, setIsDarkModeToggle])
+
+  return <header className="header flex items-center bg-generalBackgroundColor" ref={headerRef}>
+    <div className="container">
+      <div className="flex items-center justify-between">
+        {/* Logo  */}
+        <div>
+          <img src={logo} alt="" />
+        </div>
 
           {/* menu  */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
@@ -119,7 +143,7 @@ const Header = () => {
               </Link>
             </div>
             {loginBtn()}
-
+            {toggleDarkMode()}
             <span className="md:hidden" onClick={toggleMenu}>
               <BiMenu className="w-6 h-6 cursor-pointer" />
             </span>
@@ -127,7 +151,6 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
 };
 
 export default Header;

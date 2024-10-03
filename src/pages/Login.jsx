@@ -80,7 +80,7 @@ function Login() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full py-3 border-b bprder-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
+              className="w-full p-3 border-b bprder-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer dark:text-gray-800 dark:placeholder-gray-400"
               required
             />
           </div>
@@ -92,7 +92,7 @@ function Login() {
               name="password"
               value={formData.password}
               onChange={handleInputChange}
-              className="w-full py-3 border-b bprder-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
+              className="w-full p-3 border-b bprder-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer dark:text-gray-800 dark:placeholder-gray-400"
               required
             />
           </div>
@@ -100,7 +100,7 @@ function Login() {
           <div className="mt-7">
             <button
               type="submit"
-              className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3 flex items-center justify-center"
+              className="w-full bg-primaryColor text-white  text-[18px] leading-[30px] rounded-lg px-4 py-3 flex items-center justify-center"
             >
               {LoginText()}
               {/* <Loader onClick={handleButtonClick}isLoading={isLoading} buttonText="Log in"/> */}
@@ -113,7 +113,7 @@ function Login() {
               Register
             </Link>
           </p>
-          <p className="border-t-2 mt-5 text-center border-primary pt-8 py-5">
+          <p className="border-t-2 mt-5 text-center border-primary pt-8 py-5 text-textColor">
             Continue With
           </p>
           <div className="pb-8">
