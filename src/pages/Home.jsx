@@ -117,8 +117,8 @@ const Home = () => {
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Service</h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center"> Our Health Service offers unmatched, expert health care in topmost qualified and organized manner</p>
 
-                <Link to='/services' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
-                  <BsArrowRight className='group-hover:text-white w-6 h-5' />
+                <Link to='/services' className='w-[44px] h-[44px] rounded-full border border-solid border-commonBorder mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
+                  <BsArrowRight className='group-hover:text-white dark:text-white w-6 h-5' />
                 </Link>
 
               </div>
@@ -131,8 +131,8 @@ const Home = () => {
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Hospital</h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center"> An organized medical service offering diagnostic, therapeutic, or preventive outpatient services.</p>
 
-                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
-                  <BsArrowRight className='group-hover:text-white w-6 h-5' />
+                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border border-solid border-commonBorderColor mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
+                  <BsArrowRight className='group-hover:text-white dark: text-white w-6 h-5' />
                 </Link>
 
               </div>
@@ -145,8 +145,8 @@ const Home = () => {
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Book Appointment</h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">Easily Book appoitnments in nearest possible clinics/hospitals. </p>
 
-                <Link to='/appointment' className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
-                  <BsArrowRight className='group-hover:text-white w-6 h-5' />
+                <Link to='/appointment' className='w-[44px] h-[44px] rounded-full border border-solid border-commonBorderColor mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none'>
+                  <BsArrowRight className='group-hover:text-white dark: text-white w-6 h-5' />
                 </Link>
 
               </div>

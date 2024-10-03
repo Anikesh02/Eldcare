@@ -60,17 +60,17 @@ const Contact = () => {
       <form action="#" onSubmit={submitHandler} className='space-y-8'>
         <div>
           <label htmlFor="email" className='form__label'>Your Email</label>
-          <input type="email" id='email' placeholder='example@gmail.com' onChange={handleInputChange} className='form__input mt-1' />
+          <input type="email" id='email' placeholder='example@gmail.com' onChange={handleInputChange} className='form__input mt-1 dark:text-gray-800 dark:placeholder-gray-400' />
         </div>
 
         <div>
           <label htmlFor="subject" className='form__label' >Subject</label>
-          <input type="text" id='subject' onChange={handleInputChange} placeholder='Let us know how we can help you' className='form__input mt-1' />
+          <input type="text" id='subject' onChange={handleInputChange} placeholder='Let us know how we can help you' className='form__input mt-1 dark:text-gray-800 dark:placeholder-gray-400' />
         </div>
 
         <div className='sm:col-span-2'>
-          <label htmlFor="message" className='form__label'>Your Message</label>
-          <textarea rows={5} type="text" id='message' onChange={handleInputChange} placeholder='Let a comment....' className='form__input mt-1' />
+          <label htmlFor="message" className='form__label '>Your Message</label>
+          <textarea rows={5} type="text" id='message' onChange={handleInputChange} placeholder='Let a comment....' className='form__input mt-1 dark:text-gray-800 dark:placeholder-gray-400' />
         </div>
         <button type='submit' className='btn rounded sm:w-fit'>Submit</button>
       </form>
