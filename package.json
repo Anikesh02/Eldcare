@@ -10,6 +10,7 @@
     "preview": "vite preview --port 8080"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.10",
     "@vercel/speed-insights": "^1.0.10",
     "firebase": "^10.8.1",
     "react": "^18.2.0",
