@@ -113,9 +113,14 @@ const Appointment = () => {
                 {/* <label className='text-headingColor font-bold text-[16px] leading-7'> Gender: */}
                 <h6 className='text-headingColor text-[16px] inline-block font-bold leading-7'>Gender : </h6>
                 <div>
-                  <label className='pr-4 text-textColor text-sm'> <input defaultChecked type='radio' name="gender" value={"male"} className='mr-3' />Male</label>
-                  <label className='pr-4 text-textColor text-sm '> <input type='radio' name="gender" value={"female"} className='mr-3' />Female</label>
-
+                  <label className='pr-4 text-textColor text-sm'>
+                    <input
+                      defaultChecked={formData.gender === "male"} type='radio' name="gender" value={"male"} className='mr-3' />Male
+                  </label>
+                  <label className='pr-4 text-textColor text-sm '>
+                    <input
+                      defaultChecked={formData.gender === "female"} type='radio' name="gender" value={"female"} className='mr-3' />Female
+                  </label>
                 </div>
               </div>
 
