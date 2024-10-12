@@ -82,7 +82,7 @@ const Appointment = () => {
   return (
     <section className='px-5 xl:px-0'>
       <div className="max-w-[1170px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* img box  */}
           <div className="hidden lg:block bg-transparent rounded-l-lg">
             <figure className="rounded-l-lg">
@@ -90,85 +90,84 @@ const Appointment = () => {
             </figure>
           </div>
 
-          <div className="rounded-l-lg lg:pl-16 py-10">
+          <div className="rounded-l-lg">
             <h3 className='text-headingColor text-[22px] leading-9 font-bold mb-10'>
               Book an <span className='text-primaryColor'>Appointment 📝</span>
             </h3>
 
-            <form onSubmit={submitHandler}>
-              <div className="mb-5">
-                <input type="text" placeholder='Full Name' name='name' value={formData.name} onChange={handleInputChange} className='w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor ' required />
+            <form onSubmit={submitHandler} className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+              <div className="col-span-2">
+                <input type="text" placeholder='Your Full Name' name='name' value={formData.name} onChange={handleInputChange} className='w-full relative py-3 px-4 border border-solid peer border-gray-300 bg-gray-50 focus:bg-white focus:outline-none outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90 dark:bg-generalBackgroundColorDark/90 rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 cursor-pointer' required />
               </div>
 
-              <div className="mb-5">
-                <input type="email" placeholder='Enter your Email' name='email' value={formData.email} onChange={handleInputChange} className='w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor ' required />
+              <div className="col-span-2">
+                <input type="email" placeholder='Your Email' name='email' value={formData.email} onChange={handleInputChange} className='w-full relative py-3 px-4 border border-solid peer border-gray-300 bg-gray-50 focus:bg-white focus:outline-none outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90 dark:bg-generalBackgroundColorDark/90 rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 cursor-pointer' required />
               </div>
 
-              <div className="mb-5">
-                <input type="phone" length="10" placeholder='Enter your Mobile Number' name='phone' value={formData.phone} onChange={handleInputChange} className='w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor ' required />
+              <div className="col-span-2">
+                <input type="phone" length="10" placeholder='Your Mobile Number' name='phone' value={formData.phone} onChange={handleInputChange} className='w-full relative py-3 px-4 border border-solid peer border-gray-300 bg-gray-50 focus:bg-white focus:outline-none outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90 dark:bg-generalBackgroundColorDark/90 rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 cursor-pointer' required />
               </div>
 
 
-              <div className='mb-3'>
-                <label className='text-headingColor font-bold text-[16px] leading-7'> Gender:
-                  <select name="gender" value={formData.gender} onChange={handleInputChange} className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none cursor-pointer' required>
-                    <option value="">Select</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+              <div className='col-span-1 flex items-center justify-between flex-wrap'>
+                {/* <label className='text-headingColor font-bold text-[16px] leading-7'> Gender: */}
+                <h6 className='text-headingColor text-[16px] inline-block font-bold leading-7'>Gender : </h6>
+                <div>
+                  <label className='pr-4 text-textColor text-sm'> <input defaultChecked type='radio' name="gender" value={"male"} className='mr-3' />Male</label>
+                  <label className='pr-4 text-textColor text-sm '> <input type='radio' name="gender" value={"female"} className='mr-3' />Female</label>
+
+                </div>
+              </div>
+
+              <div className="col-span-1">
+                <input type="number" placeholder='Your Age' name='age' value={formData.age} onChange={handleInputChange} className='w-full relative py-3 px-4 border border-solid peer border-gray-300 bg-gray-50 focus:bg-white focus:outline-none outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90 dark:bg-generalBackgroundColorDark/90 rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 cursor-pointer' required />
+              </div>
+
+              {/* Select service  */}
+              <div className="col-span-1">
+                <label className='text-headingColor font-bold text-[16px] leading-7'> Select Treatment Service:
+                  <select name="service" value={formData.service} onChange={handleInputChange} placeholder='sele' className='w-full relative py-3 px-4 border border-solid peer border-gray-300 bg-gray-50 focus:bg-white focus:outline-none outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90 dark:bg-generalBackgroundColorDark/90 rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 cursor-pointer' required>
+                    <option value="" hidden></option>
+                    <option value="cancer">Cancer Care</option>
+                    <option value="dialysis">Dialysis</option>
+                    <option value="heart">Heart and Vascular</option>
+                    <option value="teeth">Dental</option>
+                    <option value="mental">Mental Health</option>
+                    <option value="brain">Neurology</option>
+                    <option value="burn">Burn Treatment</option>
                   </select>
                 </label>
+              </div>
 
-                <label className='text-headingColor font-bold text-[16px] leading-7 ml-5'> Age:</label>
-                <input type="age" placeholder='Enter your Age' name='age' value={formData.age} onChange={handleInputChange} className=' border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor  ml-3' required />
 
-                {/* Select service  */}
-                <div className='mb-5 mt-5'>
-                  <label className='text-headingColor font-bold text-[16px] leading-7'> Select Treatment Service:
-                    <select name="service" value={formData.service} onChange={handleInputChange} className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none cursor-pointer' required>
-                      <option value="">Select</option>
-                      <option value="cancer">Cancer Care</option>
-                      <option value="dialysis">Dialysis</option>
-                      <option value="heart">Heart and Vascular</option>
-                      <option value="teeth">Dental</option>
-                      <option value="mental">Mental Health</option>
-                      <option value="brain">Neurology</option>
-                      <option value="burn">Burn Treatment</option>
-                    </select>
-                  </label>
-                </div>
+              {/* time slot  */}
+              <div className='col-span-1'>
+                <label className='text-headingColor font-bold text-[16px] leading-7 '>Select time slot:
+                  <select name="time" value={formData.time} onChange={handleInputChange} className='w-full relative py-3 px-4 border border-solid peer border-gray-300 bg-gray-50 focus:bg-white focus:outline-none outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90 dark:bg-generalBackgroundColorDark/90 rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 cursor-pointer' required>
+                    <option value="" hidden selected></option>
+                    <option value="sunday">Sunday: 9:00 AM to 1:30 PM</option>
+                    <option value="tuesday">Tuesday: 4:00 PM to 9:30 PM</option>
+                    <option value="friday">Friday: 1:30 PM to 6:30 PM</option>
+                  </select>
+                </label>
+              </div>
 
-                {/* Select hospital  */}
+              {/* Select hospital  */}
+              <div className="col-span-2">
                 <label className='text-headingColor font-bold text-[16px] leading-7'> Select Hospital:
-                  <select name="hospital" value={formData.hospital} onChange={handleInputChange} className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none cursor-pointer' required>
-                    <option value="">Select</option>
+                  <select name="hospital" value={formData.hospital} onChange={handleInputChange} className='w-full relative py-3 px-4 border border-solid peer border-gray-300 bg-gray-50 focus:bg-white focus:outline-none outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90 dark:bg-generalBackgroundColorDark/90 rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 cursor-pointer' required>
+                    <option value="" hidden selected></option>
                     <option value="nair">Nair Hospital, Mumbai Central</option>
                     <option value="lilavati">Lilavati Hospital, Bandra West</option>
                     <option value="kohinoor">Kohinoor Hospital, Marine Lines</option>
                     <option value="global">Global Hospital, Parel East</option>
                     <option value="lotus">Lotus Hospital, Borivali West</option>
                     <option value="yashoda">Yashoda Hospital, Marine Lines</option>
-
                   </select>
                 </label>
-
               </div>
-              {/* time slot  */}
-              <div className='mb-5'>
-                <label className='text-headingColor font-bold text-[16px] leading-7 '>Enter time slot:
-                  <select name="time" value={formData.time} onChange={handleInputChange} className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none cursor-pointer' required>
-                    <option value="">Select</option>
-                    <option value="sunday">Sunday: 9:00 AM to 1:30 PM</option>
-                    <option value="tuesday">Tuesday: 4:00 PM to 9:30 PM</option>
-                    <option value="friday">Friday: 1:30 PM to 6:30 PM</option>
-                  </select>
-                </label>
-
-
-
-                <div className="mt-7">
-                  <button type='submit' className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3">Proceed</button>
-                </div>
-
+              <div className="col-span-2">
+                <button type='submit' className='w-full relative py-3 px-4 border border-solid peer border-gray-300  focus:outline-none outline-none bg-primaryColor hover:bg-transparent hover:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor/90  rounded-md transition-all duration-300 ease-in-out shadow-sm hover:shadow-md focus:shadow-lg dark:border-gray-600 active:scale-95 disabled:active:scale-100 '>Proceed</button>
               </div>
             </form>
 
