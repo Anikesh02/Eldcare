@@ -7,19 +7,19 @@ import {AiFillYoutube, AiFillGithub, AiOutlineInstagram} from 'react-icons/ai'
 const socialLinks = [
   {
     path:"https://github.com/Anikesh02",
-    icon: <AiFillGithub className='text-white group-hover:text-white w-4 h-5'/>
+    icon: <AiFillGithub className='text-gray-800 dark:text-white group-hover:text-white w-4 h-5'/>
   },
   {
     path:"https://github.com/Anikesh02",
-    icon: <AiFillYoutube className='text-white group-hover:text-white w-4 h-5'/>
+    icon: <AiFillYoutube className='text-gray-800 dark:text-white group-hover:text-white w-4 h-5'/>
   },
   {
     path:"https://github.com/Anikesh02",
-    icon: <AiOutlineInstagram className='text-white group-hover:text-white w-4 h-5'/>
+    icon: <AiOutlineInstagram className='text-gray-800 dark:text-white group-hover:text-white w-4 h-5'/>
   },
   {
     path:"https://github.com/Anikesh02",
-    icon: <AiFillLinkedin className='text-white group-hover:text-white w-4 h-5'/>
+    icon: <AiFillLinkedin className='text-gray-800 dark:text-white group-hover:text-white w-4 h-5'/>
   },
 ]
 
