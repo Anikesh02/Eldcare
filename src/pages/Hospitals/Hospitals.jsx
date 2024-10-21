@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useState } from 'react'
 import DoctorCard from '../../components/Hospitals/HospitalCard'
 import { doctors } from '../../assets/data/hospitals'
