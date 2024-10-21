@@ -1,0 +1,91 @@
+.pricing{
+    width: 100%;
+    padding: 5rem 1rem;
+    background-image: url(card.png);
+}
+
+.card-container{
+    color: yellow;
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 90px;
+}
+
+.card{
+    background:linear-gradient(135deg, #CE9FFC 0%,#796feb 100%);
+    border: 1px solid yellow;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 10px 20px 0 rgba(0, 0, 0, 0.40);
+    border-radius: 30px;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    
+    transition: 0.3s;
+
+    
+}
+
+.card:hover{
+    background:linear-gradient(135deg, #0FF0B3 0%,#036ED9 100%);
+    opacity: 1;
+    
+    
+}
+
+.card h3{
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+.card p{
+    
+    padding: 10px 0;
+    font-weight: bold;
+    
+}
+
+.bar{
+    font-weight: 800;
+    border-bottom: 1px solid #000;
+    width: 30%;
+    margin: 1.5rem auto;
+    display: block;
+}
+
+.btc{
+    font-size: 4rem;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+.button{
+    /* background: #f4511e; */
+    background:linear-gradient(135deg, #fcdf8a 0%,#f38381 100%);
+    display: block;
+    width: 60%;
+    text-align: center;
+    height: 50px;
+    margin: 2rem auto;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.5s;
+    
+}
+.button:hover{
+    color: #fff;
+    background: blue;
+   
+}
+
+@media screen and (max-width:740px) {
+    .card-container{
+    max-width: 90%;
+    margin: auto;
+    
+    grid-template-columns: 1fr;
+    
+    }
+}
